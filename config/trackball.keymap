@@ -62,7 +62,7 @@
 
         base {
             bindings = <
-&hold_mo_tap_mkp 2 MB2  &mkp MB1
+&mkp MB1  &hold_mo_tap_mkp 2 MB2
             >;
 
             display-name = "Base";
@@ -94,13 +94,10 @@
     };
 };
 
-&trackball { cpi = <800>; };
+&trackball { cpi = <1000>; };
 
 &trackball_listener {
-    input-processors =
-        <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-        <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-        <&zip_xy_scaler 9 20>;
+    input-processors = <&zip_xy_scaler 9 20>;
 
     scroller {
         layers = <1>;
